@@ -1,4 +1,5 @@
 11/22/14 <red13dotnet>
+This should be cloned into the /rockdev directory
 Run mkupdate.sh after doing the following:
 Build kernel
 Build android
