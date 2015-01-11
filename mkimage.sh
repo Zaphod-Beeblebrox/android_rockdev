@@ -4,16 +4,16 @@ set -e
 . build/envsetup.sh >/dev/null && setpaths
 
 export PATH=$ANDROID_BUILD_PATHS:$PATH
-TARGET_PRODUCT=`get_build_var TARGET_PRODUCT`
+TARGET_PRODUCT=`get_build_var TARGET_DEVICE`
 TARGET_HARDWARE=`get_build_var TARGET_BOARD_HARDWARE`
-echo TARGET_PRODUCT=$TARGET_PRODUCT
+echo TARGET_DEVICE=$TARGET_DEVICE
 echo TARGET_HARDWARE=$TARGET_HARDWARE
 TARGET="withoutkernel"
 if [ "$1"x != ""x  ]; then
          TARGET=$1
 fi
 
-IMAGE_PATH=rockdev/Image-$TARGET_PRODUCT
+IMAGE_PATH=rockdev/Image-$TARGET_DEVICE
 
 rm -rf $IMAGE_PATH
 mkdir -p $IMAGE_PATH
@@ -76,9 +76,9 @@ fi
 	echo "done."
 
 	echo -n "create misc.img.... "
-	cp -a rkst/Image/misc.img $IMAGE_PATH/misc.img
-	cp -a rkst/Image/pcba_small_misc.img $IMAGE_PATH/pcba_small_misc.img
-	cp -a rkst/Image/pcba_whole_misc.img $IMAGE_PATH/pcba_whole_misc.img
+	cp -a rockdev/misc.img $IMAGE_PATH/misc.img
+	cp -a rockdev/pcba_small_misc.img $IMAGE_PATH/pcba_small_misc.img
+	cp -a rockdev/pcba_whole_misc.img $IMAGE_PATH/pcba_whole_misc.img
 	echo "done."
 
 if [ -d $OUT/system ]
