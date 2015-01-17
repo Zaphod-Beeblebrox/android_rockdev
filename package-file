@@ -6,7 +6,7 @@ bootloader	RK3188Loader(L)_V2.10.bin
 parameter	parameter
 misc		Image-aokp_rk3188/misc.img
 #kernel		Image/kernel.img
-boot        Image-aokp_rk3188/boot.img
+boot            Image-aokp_rk3188/boot.img
 recovery	Image-aokp_rk3188/recovery.img
 system		Image-aokp_rk3188/system.img
 # 要写入backup分区的文件就是自身（update.img）

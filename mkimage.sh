@@ -4,16 +4,16 @@ set -e
 . build/envsetup.sh >/dev/null && setpaths
 
 export PATH=$ANDROID_BUILD_PATHS:$PATH
-TARGET_PRODUCT=`get_build_var TARGET_DEVICE`
+TARGET_PRODUCT=`get_build_var TARGET_PRODUCT`
 TARGET_HARDWARE=`get_build_var TARGET_BOARD_HARDWARE`
-echo TARGET_DEVICE=$TARGET_DEVICE
+echo TARGET_PRODUCT=$TARGET_PRODUCT
 echo TARGET_HARDWARE=$TARGET_HARDWARE
 TARGET="withoutkernel"
 if [ "$1"x != ""x  ]; then
          TARGET=$1
 fi
 
-IMAGE_PATH=rockdev/Image-$TARGET_DEVICE
+IMAGE_PATH=rockdev/Image-$TARGET_PRODUCT
 
 rm -rf $IMAGE_PATH
 mkdir -p $IMAGE_PATH
